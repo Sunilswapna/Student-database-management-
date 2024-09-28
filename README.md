@@ -7,7 +7,7 @@ Student Enrollment: Easily add and manage student information, including name, r
 Face Detection: Utilize advanced face recognition algorithms to accurately capture and record attendance.<br>
 Automated Attendance Tracking: Automatically mark attendance based on facial recognition, reducing manual work and errors.<br>
 User-Friendly Interface: Simple and intuitive web interface for both students and administrators.<br>
-Frontend: HTML, CSS, JavaScript (with any frontend framework like Bootstrap, if applicable).<br>
+Frontend: HTML, CSS, JavaScript, Bootstrap.<br>
 Backend: Python flask, SQL Alchemy.<br>
 Database:MySQL <br>
 Face Detection: OpenCV, Dlib library for facial recognition <br>
