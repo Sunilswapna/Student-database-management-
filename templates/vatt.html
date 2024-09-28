@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .att {
+            color: rgb(169, 19, 29);
+        }
+
+        .dfd {
+            border: 1px solid black;
+        }
+
+        .bd {
+            background-color: rgb(7, 10, 28);
+            background-image: url(/static/images/bckg2.jpg);
+            background-repeat: no-repeat;
+            background-size: 50cm;
+        }
+
+        .u {
+            color: #e1dada;
+        }
+
+        span {
+            color: rgb(226, 185, 19);
+        }
+
+        label {
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="bd">
+    <h3 class="text-center"><span>Add Attendance Details</span> </h3>
+
+    {% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form action="/attendance" method="post">
+                    <br>
+                    <div class="form-group">
+                        <select class="form-control" id="coursecode" name="coursecode" required>
+                            <option value="" selected>Select Course</option> <!-- Default option -->
+                            {% for d in courses %}
+                            <option value="{{d.coursecode}}">{{d.coursecode}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger btn-sm btn-block" name="att">Add Attendance</button>
+                        <button class="btn btn-danger btn-sm btn-block" name="close">Stop</button> <!-- Fixed button name -->
+                    </div>
+                </form>
+                <br>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}
